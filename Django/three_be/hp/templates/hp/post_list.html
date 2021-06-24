@@ -1,0 +1,102 @@
+{% extends 'hp/base.html' %}
+{% load static %}
+{% load hp %}
+{% load app %}
+{% block meta_title %}{{ heading }} -{{ block.super }}{% endblock %}
+
+{% block header %}
+
+ <figure class="sub_imgWrapper">
+   <img src="{% static 'hp/img/TBE完成ロゴ.png' %}">
+ </figure>
+ <!-- <nav class="navbars">
+   <ul class="menu">
+     <li class="menu-list">
+       <a href="{% url 'hp:post_list' %}">新着情報</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:top' %}">スクールについて</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:fee' %}">料金</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:introduce' %}">講師・スタッフの紹介</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:blog_list' %}">ブログ</a>
+     </li>
+   </ul>
+</nav> -->
+<nav class="navbar navbar-expand-md navbar-light">
+  <button class="navbar-toggler fixed-top" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:post_list' %}">新着情報</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:top' %}">スクールについて</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:fee' %}">コース・料金</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:introduce' %}">講師・スタッフの紹介</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:blog_list' %}">ブログ</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<h1 class='headline'>{{ heading }}</h1>
+
+<div>
+  {% for post in post_list %}
+  <article class="post_meta">
+     <hr>
+       <a href="{% url 'hp:post_detail' post.pk %}">
+         {{ post.title }}
+       </a>
+       <p class="post_meta_time">
+         <time datetime="{{ post.created_at | date:'Y-m-d' }}">{{ post.created_at | date:'Y年n月j日'}}</time>
+       </p>
+  </article>
+  {% endfor %}
+</div>
+
+<div class="div_pagenation">
+  {% include 'hp/includes/url_replace.html' %}
+</div>
+
+{% endblock %}
+
+{% block jquery %}
+<script>
+  ScrollReveal().reveal('.headline', {
+                         delay: 200,
+                         distance: '40px',
+                         origin: 'bottom',
+                         duration:2000,
+                         opacity:0,
+  });
+  ScrollReveal().reveal('.post_meta', {
+                         delay: 200,
+                         distance: '40px',
+                         origin: 'bottom',
+                         duration:2000,
+                         opacity:0,
+  });
+</script>
+{% endblock %}
+
+{% block footer %}
+{% include 'hp/includes/footer.html '%}
+{% endblock %}

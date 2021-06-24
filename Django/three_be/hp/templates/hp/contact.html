@@ -1,0 +1,135 @@
+{% extends 'hp/base.html' %}
+{% load static %}
+{% load hp %}
+{% load app %}
+{% block meta_title %}{{ heading }} -{{ block.super }}{% endblock %}
+
+{% block header %}
+
+ <figure class="sub_imgWrapper">
+   <img src="{% static 'hp/img/TBE完成ロゴ.png'%}">
+ </figure>
+ <!-- <nav class="navbars">
+   <ul class="menu">
+     <li class="menu-list">
+       <a href="{% url 'hp:post_list' %}">新着情報</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:top' %}">スクールについて</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:fee' %}">料金</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:introduce' %}">講師・スタッフの紹介</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:blog_list' %}">ブログ</a>
+     </li>
+   </ul>
+</nav> -->
+<nav class="navbar navbar-expand-md navbar-light">
+  <button class="navbar-toggler fixed-top" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:post_list' %}">新着情報</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:top' %}">スクールについて</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:fee' %}">コース・料金</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:introduce' %}">講師・スタッフの紹介</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:blog_list' %}">ブログ</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="contact">
+  <h2 class="headline">{{ heading }}</h2>
+
+ <div class="form_inner">
+   <p class="help_text_top">※必須</p>
+   <form action="{% url 'hp:contact_confirm' %}" method="POST">
+     {{ form.non_field_errors }}
+     <div class="field field_first_date">
+      <span class="help_text">※</span><span class="first_date_label">{{ form.first_date.label_tag }}</span>
+       {{ form.first_date }}<span class="form_error">{{ form.first_date.errors }}</span>
+     </div>
+     <div class="field field_first_time">
+       <span class="help_text">※</span><span class="first_time_label">{{ form.first_time.label_tag }}</span>
+       {{ form.first_time }}
+       {{ form.first_time.errors }}<span class="form_error">{{ form.second_date.errors }}</span>
+     </div>
+     <div class="field field_second_date">
+       <span class="second_date_label">{{ form.second_date.label_tag }}</span>
+       {{ form.second_date }}<span class="form_error">{{ form.second_date.errors }}</span>
+     </div>
+     <div class="field field_second_time">
+       <span class="second_time_label">{{ form.second_time.label_tag }}</span>
+       {{ form.second_time }}<span class="form_error">{{ form.second_time.errors }}</span>
+     </div>
+     <div class="field field_parent_name">
+       <span class="help_text">※</span><span class="parent_name_label">{{ form.parent_name.label_tag }}</span>
+       {{ form.parent_name }}<br><span class="help_text_adult">※成人の方は不要</span>
+       <span class="form_error">{{ form.parent_name.errors }}</span>
+     </div>
+     <div class="field field_student_name">
+       <span class="help_text">※</span><span class="student_name_label">{{ form.student_name.label_tag }}</span>
+       {{ form.student_name }}<span class="form_error">{{ form.student_name.errors }}</span>
+     </div>
+     <div class="field field_birthday">
+       <span class="help_text">※</span><span class="birthday_label">{{ form.birthday.label_tag }}</span>
+       <p class="field_birthdayP">
+         {{ form.birthday }}
+       </p>
+       <span class="form_error">{{ form.birthday.errors }}</span>
+     </div\\>
+     <div class="field field_phone_number">
+       <span class="help_text">※</span><span class="phone_number_label">{{ form.phone_number.label_tag }}</span>
+       {{ form.phone_number }}<span class="form_error">{{ form.phone_number.errors }}</span>
+     </div>
+     <div class="field field_email">
+       <span class="help_text">※</span><span class="email_label">{{ form.email.label_tag }}</span>
+       {{ form.email }}<span class="form_error">{{ form.email.errors }}</span>
+     </div>
+     <div class="field field_text">
+       <span class="text_label">{{ form.text.label_tag }}</span>
+       {{ form.text }}<span class="form_error">{{ form.text.errors }}</span>
+     </div>
+     {% csrf_token %}
+     <div class="contact_buttonWrapper">
+       <button class="contact_button" type="submit">お申込み内容を確認する</button>
+     </div>
+   </form>
+ </div>
+</div>
+{% endblock %}
+{% block jquery %}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- <script src="https://code.jpuery.com/jquery-1.12.4.js"></script> -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<script>
+  $(function () {
+    $('#id_first_date').datepicker({dateFormat: 'yy/mm/dd'});
+    $('#id_second_date').datepicker({dateFormat: 'yy/mm/dd'});
+  });
+</script>
+{% endblock %}
+
+{% block footer %}
+<div class="contact_footer">
+  {% include 'hp/includes/footer.html '%}
+</div>
+{% endblock %}

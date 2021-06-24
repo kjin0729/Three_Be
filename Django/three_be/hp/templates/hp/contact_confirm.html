@@ -1,0 +1,121 @@
+{% extends 'hp/base.html' %}
+{% load static %}
+{% load hp %}
+{% load app %}
+{% block meta_title %}お申込み内容の確認 -{{ block.super }}{% endblock %}
+
+{% block header %}
+ <figure class="sub_imgWrapper">
+   <img src="{% static 'hp/img/TBE完成ロゴ.png'%}">
+ </figure>
+ <!-- <nav class="navbars">
+   <ul class="menu">
+     <li class="menu-list">
+       <a href="{% url 'hp:post_list' %}">新着情報</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:top' %}">スクールについて</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:fee' %}">料金</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:introduce' %}">講師・スタッフの紹介</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:blog_list' %}">ブログ</a>
+     </li>
+   </ul>
+</nav> -->
+<nav class="navbar navbar-expand-md navbar-light">
+  <button class="navbar-toggler fixed-top" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:post_list' %}">新着情報</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:top' %}">スクールについて</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:fee' %}">コース・料金</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:introduce' %}">講師・スタッフの紹介</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:blog_list' %}">ブログ</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="contact_confirm">
+  <h2 class="headline">お申込み内容の確認</h2>
+
+    <div class="contact_confirm_inner">
+
+     <div class="contact_confirm_value">
+      <span class="contact_confirm_label">{{ form.first_date.label_tag }} :</span>
+       {{ form.first_date.value }}
+     </div>
+     <div class="contact_confirm_value">
+       <span class="contact_confirm_label">{{ form.first_time.label_tag }} :</span>
+       {{ form.first_time.value }}
+     </div>
+     {% if form.second_date.value %}
+     <div class="contact_confirm_value">
+       <span class="contact_confirm_label">{{ form.second_date.label_tag }} :</span>
+       {{ form.second_date.value }}
+     </div>
+     <div class="contact_confirm_value">
+       <span class="contact_confirm_label">{{ form.second_time.label_tag }} :</span>
+       {{ form.second_time.value }}
+     </div>
+     {% endif %}
+     <div class="contact_confirm_value">
+       <span class="contact_confirm_label">{{ form.parent_name.label_tag }} :</span>
+       {{ form.parent_name.value }}
+     </div>
+     <div class="contact_confirm_value">
+       <span class="contact_confirm_label">{{ form.student_name.label_tag }} :</span>
+       {{ form.student_name.value }}
+     </div>
+     <div class="contact_confirm_value">
+       <span class="contact_confirm_label">{{ form.birthday.label_tag }} :</span>
+         {{ form.birthday.value }}
+     </div>
+     <div class="contact_confirm_value">
+       <span class="contact_confirm_label">{{ form.phone_number.label_tag }} :</span>
+       {{ form.phone_number.value }}
+     </div>
+     <div class="contact_confirm_value">
+       <span class="contact_confirm_label">{{ form.email.label_tag }} :</span>
+       {{ form.email.value }}
+     </div>
+     <div class="contact_confirm_value">
+       <span class="contact_confirm_label">{{ form.text.label_tag }} :</span>
+       <div class="contact_confirm_text">
+         {{ form.text.value }}
+       </div>
+     </div>
+    </div>
+    <form action="{% url 'hp:contact_complete' %}" method="POST">
+     {% csrf_token %}
+     <div class="contact_buttonWrapper">
+       <button class="contact_button" type="submit">無料レッスンを申し込む</button>
+       {% for field in form %}{{ field.as_hidden }}{% endfor %}
+     </div>
+   </form>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="contact_footer">
+  {% include 'hp/includes/footer.html '%}
+</div>
+{% endblock %}

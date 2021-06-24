@@ -1,0 +1,517 @@
+{% extends 'hp/base.html' %}
+{% load static %}
+{% load hp %}
+{% load app %}
+
+
+{% block header %}
+      <!-- <div class="ly_header_inner">
+      <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url('{% static 'hp/img/IMG_6185.JPG' %}')">
+        </div>
+        <div class="swiper-slide" style="background-image:url('{% static 'hp/img/スタジオセッション-043.JPG' %}')">
+        </div>
+        <div class="swiper-slide" style="background-image:url('{% static 'IMG_4493.JPG' %}')">
+        </div>
+      </div>
+      </div> -->
+      <div id="carouselExample" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner bgCarousel">
+        <div class="carousel-item bgCarousel__item active" style="background-image:url('{% static 'hp/img/IMG_6185.JPG'%}')"></div>
+        <div class="carousel-item bgCarousel__item" style="background-image:url('{% static 'hp/img/スタジオセッション-043.JPG'%}')"></div>
+        <div class="carousel-item bgCarousel__item" style="background-image:url('{% static 'hp/img/IMG_4493.JPG'%}')"></div>
+      </div>
+        <!-- <div class="carousel" style="background-image:url('{% static 'hp/img/スタジオセッション-043.JPG'%}')" > -->
+            <!-- <div class="carousel_image"> -->
+          <!-- </div> -->
+        <!-- </div> -->
+        <div class="jumbotron_mask">
+          <figure class="top_imgWrapper">
+            <!-- <div class="bl_brand"> -->
+              <!-- <figure class="bl_brand_imgWrapper"> -->
+                <!-- <a class="bl_bland_imgLink" href="{% url 'hp:top' %}"> -->
+                  <img src="{% static 'hp/img/TBE完成ロゴ.png' %}">
+                <!-- </a> -->
+              <!-- </figure> -->
+            <!-- </div> -->
+          </figure>
+
+            <!-- <nav class="navbars navbars-expand-lg">
+              <button class="navbars-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbars-toggler-icon"></span>
+              </button> -->
+
+              <nav class="navbar navbar-expand-md navbar-light">
+                <button class="navbar-toggler fixed-top" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'hp:post_list' %}">新着情報</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'hp:top' %}">スクールについて</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'hp:fee' %}">コース・料金</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'hp:introduce' %}">講師・スタッフの紹介</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'hp:blog_list' %}">ブログ</a>
+                    </li>
+                    <li class="nav-item d-md-none d-inline-block">
+                      <a class="nav-link" href="{% url 'hp:contact' %}">無料体験レッスンを申し込む</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <!-- <button type="button" class="btn js-btn">
+               <span class="btn-line"></span>
+              </button>
+
+              <nav class="navbars">
+                <ul class="menu">
+                  <li class="menu-list">
+                    <a href="{% url 'hp:post_list' %}">新着情報</a>
+                  </li>
+                  <li class="menu-list">
+                    <a href="{% url 'hp:top' %}">スクールについて</a>
+                  </li>
+                  <li class="menu-list">
+                    <a href="{% url 'hp:fee' %}">料金</a>
+                  </li>
+                  <li class="menu-list">
+                    <a href="{% url 'hp:introduce' %}">講師・スタッフの紹介</a>
+                  </li>
+                  <li class="menu-list">
+                    <a href="{% url 'hp:blog_list' %}">ブログ</a>
+                  </li>
+                </ul>
+              </nav> -->
+
+
+            </div>
+           </div>
+
+        <!-- </div> -->
+      <!--ly_header_inner-->
+{% endblock %}
+
+    <div>
+      <!-- <div class="jumbotrons" style="background-image:url('{% static 'hp/img/IMG_6185.JPG'%}')">
+        <div class="jumbotron_mask">
+        </div>
+        <!--jumbotron_mask-->
+      <!-- </div>  -->
+      <!--jumbotrons-->
+      {% block content %}
+      <div class="top">
+        <div class="bl_maintitle">
+          <p class="el_subtitle">ちょっぴり英語を話せたら…</p>
+          <p class="el_maintitle">世界が変わる‼</p>
+          <p class="el_subtitle">コミュニケーションを学ぶ英会話教室</p>
+    　　　<!-- <p class="el_subtitle"><span>Three Be</span>は会話に特化した教室です。</p> -->
+        </div>
+
+
+        <div class="bl_trouble">
+          <div class="trouble_title">
+            <p>英語を話してみたいけど…</p>
+          </div>
+          <div class="ly_balloon">
+            <div class="balloon1Wrapper">
+              <div class="balloon1">
+                <p>何から始めればいいかわからない</p>
+              </div>
+            </div>
+            <div class="balloon2Wrapper">
+              <div class="balloon2">
+                <p>上手く発音できるか不安</p>
+              </div>
+            </div>
+            <div class="balloon3Wrapper">
+              <div class="balloon3">
+                <p>学生時代、英語は苦手だったからなぁ…</p>
+              </div>
+            </div>
+            <div class="balloon4Wrapper">
+              <div class="balloon4">
+                <p>今更はじめても<br>遅いかなぁ</p>
+              </div>
+            </div>
+            <figure class="trouble_imgWrapper">
+              <img src="{% static 'hp/img/komatta_woman2.png' %}" alt="">
+            </figure>
+          </div>
+          <div class="trouble_catchpharse">
+            <span>
+              Three Beは<span class="trouble_catchpharse_bold">会話に特化した</span>英会話教室です！
+            </span>
+          </div>
+        </div>
+
+        <div class="bl_reason">
+          <div class="reason_title">
+            <p><span class="reason_3b">Three Be</span>の<span class="reason_5">５</span>つの特徴</p>
+          </div>
+          <div class="ly_reason_card">
+            <div class="reason_card">
+              <p class="reason_number">01</p>
+              <figure class="reason_icon_wrapper">
+                <img src="{% static 'hp/img/font-solid.png' %}" alt="">
+              </figure>
+              <p>外国人講師による英語だけを使ったレッスン</p>
+            </div>
+            <div class="reason_card">
+              <p class="reason_number">02</p>
+              <figure class="reason_icon_wrapper">
+                <img src="{% static 'hp/img/しゃべる人の無料アイコン.png' %}" alt="">
+              </figure>
+              <p>会話・コミュニケーションに特化</p>
+            </div>
+            <div class="reason_card">
+              <p class="reason_number">03</p>
+              <figure class="reason_icon_wrapper">
+                <img src="{% static 'hp/img/icons8-背の高い人-100.png' %}" alt="">
+              </figure>
+              <p>小学生～シニアまで通える</p>
+            </div>
+            <div class="ly_reason_card_wide">
+            <div class="reason_card_wide">
+              <p class="reason_number">04</p>
+              <figure class="reason_icon_wrapper">
+                <img src="{% static 'hp/img/OL風の人物アイコン.png' %}" alt="">
+              </figure>
+              <p>留学経験、海外居住経験のある日本人スタッフが運営</P>
+            </div>
+              <div class="reason_card_wide">
+                <p class="reason_number">05</p>
+                <figure class="reason_icon_wrapper">
+                  <img src="{% static 'hp/img/会話アイコン.png' %}" alt="">
+                </figure>
+                <p>一人ひとりの実力が発揮できるように最大５名の少人数制</P>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="freelesson_buttonWrapper">
+          <button class="freelesson_button" type="button" onclick="location.href='{% url 'hp:contact' %}'">
+            無料体験レッスンを申し込む
+          </button>
+        </div>
+
+　　　　<div class="bl_important">
+         <div class="important_title">
+           <span>３</span>つの<span class="reason_3b">Be</span><br>
+           <span class="reason_3b">Three Be</span>とは
+         </div>
+　　　　　  <div class="ly_important_reason">
+             <div class="ly_important_reason_content">
+               <div class="bl_important_reason">
+                <div class="important_circle">Be</div>
+                 <span class="reason_3b" style="font-weight: bold">Creative</span> 想像力豊かに！
+               </div>
+               <div class="bl_important_reason">
+                 <div class="important_circle">Be</div>
+                 <span class="reason_3b" style="font-weight: bold">Yourself</span> 自分らしく！
+               </div>
+               <div class="bl_important_reason">
+                 <div class="important_circle">Be</div>
+                 <span class="reason_3b" style="font-weight: bold">Ambitious</span> 大志を抱け！
+               </div>
+             </div>
+           <div class="important_textDiv">
+             <p class="important_text">
+               想像力豊かに自身で考え、どのような環境でも自分らしく自己表現できる力を身につけることで、未来の可能性や選択肢を大きく広げてほしい！
+               そんな想いが詰まったモットーです。
+             </p>
+            </div>
+           </div>
+           </div>
+           <div class="bl_school">
+             <div class="school_title">
+               スクールの概要
+             </div>
+             <div class="ly_school_content">
+               <div class="ly_school_left">
+                 <div class="bl_school_content">
+                   <span class="school_content_title">住所</span><br>
+                   <p>〒616-8422<br>
+                     京都府京都市右京区嵯峨釈迦堂大門町25番地
+                   </p>
+                 </div>
+                 <div class="bl_school_content">
+                   <span class="school_content_title">連絡先</span><br>
+                   <p>電話番号：080-3817-1616（高山）
+                     <br>メール：contact@threebe.jp
+                   </p>
+                  </div>
+                 <div class="bl_school_content">
+                   <span class="school_content_title">対象年齢</span><br>
+                   <p>小学生・中高生・大人・シニア（60歳以上）<br>
+                     <span class="school_annotion">
+                     ※4歳～6歳のお子様相談可〇
+                     </span>
+                   </p>
+                 </div>
+               <div class="bl_school_content">
+                 <span class="school_content_title">開校日</span><br>
+                 <p>月曜日～金曜日<br>
+                   <span class="school_annotion">
+                     ※土日・祝日休校<br>
+                     ※開校日、休校日については<a href="#">年間レッスンカレンダー</a>をご覧ください。
+                   </span>
+                 </p>
+               </div>
+               <div class="bl_school_content">
+                 <span class="school_content_title">開講校間</span><br>
+                 <p>10:30～20:10<br>
+                   <span class="school_annotion">
+                   ※コースによって時間帯が異なります。<br>
+                   ※詳細は<a href="{% url 'hp:fee' %}">「コース・料金」</a>をご覧ください。
+                   </span>
+                 </p>
+               </div>
+               <div class="bl_school_content">
+                 <span class="school_content_title">レッスン時間</span><br>
+                 <p>50分 / 1レッスン<br>
+                   <span class="school_annotion">
+                   ※約月4回<br>祝日などの兼ね合いで年間を通して全ての曜日で同回数レッスンを受けられるように、調整しています。
+                   </span>
+                 </p>
+               </div>
+             </div>
+             <div class="ly_school_right">
+               <div class="school_map">
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13069.583960807975!2d135.6752327!3d35.0218222!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2e3757bb2c975ea2!2zVGhyZWUgQmUg6Iux5Lya6Kmx5pWZ5a6k!5e0!3m2!1sja!2sjp!4v1623138841778!5m2!1sja!2sjp"
+                  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+               </div>
+               <div class="bl_school_content">
+                 <span class="school_content_title">駐車場</span><br>
+                 <p>
+                   当スクールには駐車スペース（２台分）と駐輪スペースがございます。<br>
+                   駐車可能台数は限られておりますので、満車の際は近隣のコインパーキングを
+                   ご利用ください。<br>
+                   路上への駐車は近隣住民の皆様へのご迷惑となりますので、ご遠慮いただきます
+                   ようお願いいたします。
+                 </p>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="freelesson_small_buttonWrapper">
+           <button class="freelesson_small_button" type="button" onclick="location.href='{% url 'hp:contact' %}'">
+             無料体験レッスンを申し込む
+           </button>
+         </div>
+       </div>
+      </div>
+      {% endblock %}
+    </div>
+
+{% block footer %}
+{% include 'hp/includes/footer.html '%}
+{% endblock %}
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+
+    {% block jquery %}
+      <script>
+        $(function () {
+          $('js-btn').on('click', function () {
+            $('.menu, .btn-line')toggleClass('open');
+          })
+        });
+
+          $(function() {
+            $('#carouselExample').carousel({
+              interval: 1000,
+              wrap: true
+            });
+          });
+
+    //     var swiper;
+    //     $(window).load(function() {
+    //     swiper = new Swiper('.swiper-container', {
+    //
+    //      loop: true,
+    //      speed: 600,
+    //      slidesPerView: 3,
+    //      spaceBetween: 10,
+    //      direction: 'horizontal'
+    //      effect: 'slide',
+    //
+    //      autoplay: {
+    //        delay: 3000,
+    //        stopOnLast: false,
+    //        disableOnInteraction: true
+    //      },
+    //
+    //     });
+    // });
+      </script>
+      <script>
+        ScrollReveal().reveal('.el_maintitle', {
+                               delay: 200, //アニメーションの発生タイミング
+                               distance: '40px', //要素の移動距離
+                               origin: 'bottom', //要素が移動してくる方向 top/right/bottom/left
+                               duration:2000, //アニメーション完了までの速度
+                               opacity:0, //アニメーション開始前の要素の不透明度
+        });
+        ScrollReveal().reveal('.el_subtitle', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.trouble_title', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.balloon1Wrapper', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.balloon2Wrapper', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.balloon3Wrapper', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.balloon4Wrapper', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.trouble_imgWrapper', {
+                               delay: 100,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:1000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.trouble_catchpharse', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.reason_title', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.reason_card', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.ly_reason_card_wide', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.freelesson_buttonWrapper', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.important_title', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.bl_important_reason', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.important_textDiv', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.school_title', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.bl_important_reason', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.bl_important_reason', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.ly_school_left', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+        ScrollReveal().reveal('.ly_school_right', {
+                               delay: 200,
+                               distance: '40px',
+                               origin: 'bottom',
+                               duration:2000,
+                               opacity:0,
+        });
+      </script>
+
+  {% endblock %}
+
+  </body>
+
+</html>

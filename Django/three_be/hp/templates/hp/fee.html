@@ -1,0 +1,266 @@
+{% extends 'hp/base.html' %}
+{% load static %}
+{% load hp %}
+{% load app %}
+{% block meta_title %}{{ heading }} -{{ block.super }}{% endblock %}
+
+{% block header %}
+
+ <figure class="sub_imgWrapper">
+   <img src="{% static 'hp/img/TBE完成ロゴ.png'%}">
+ </figure>
+ <!-- <nav class="navbars">
+   <ul class="menu">
+     <li class="menu-list">
+       <a href="{% url 'hp:post_list' %}">新着情報</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:top' %}">スクールについて</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:fee' %}">料金</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:introduce' %}">講師・スタッフの紹介</a>
+     </li>
+     <li class="menu-list">
+       <a href="{% url 'hp:blog_list' %}">ブログ</a>
+     </li>
+   </ul>
+</nav> -->
+<nav class="navbar navbar-expand-md navbar-light">
+  <button class="navbar-toggler fixed-top" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:post_list' %}">新着情報</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:top' %}">スクールについて</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:fee' %}">コース・料金</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:introduce' %}">講師・スタッフの紹介</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hp:blog_list' %}">ブログ</a>
+      </li>
+      <li class="nav-item d-md-none d-inline-block">
+        <a class="nav-link" href="{% url 'hp:contact' %}">無料体験レッスンを申し込む</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="fee">
+  <h1 class="headline">{{ heading }}</h1>
+    <div class="lesson">
+      <div class="private_lesson_titlebox">
+        <h2>マンツーマンレッスン</h2>
+      </div>
+      <div class="lesson_inner">
+        <ul>
+          <li>
+            小学生<br>
+            <span>14,300</span>
+          </li>
+          <li>
+            中高生<br>
+            <span>16,500</span>
+          </li>
+          <li>
+            大人<br>
+            <span>17,600</span>
+          </li>
+        　<li>
+            シニア<br>
+            <span>13,200</span>
+          </li>
+      <!-- </div> -->
+      <div class="group_lesson_titlebox">
+        <h2>グループレッスン（２名～５名）</h2>
+      </div>
+      <!-- <div class="group_lesson_inner"> -->
+          <li>
+            小学生<br>
+              <span>9,900</span>
+          </li>
+          <li>
+            中高生<br>
+              <span>11,000</span>
+          </li>
+          <li>
+            大人<br>
+              <span>13,200</span>
+          </li>
+        　<li>
+            シニア<br>
+              <span>8,800</span>
+          </li>
+        </ul>
+    </div>
+    </div>
+
+
+
+    <div class="fee_annotion">
+      <p>料金は全て月額料金、税込価格です。</p>
+      <p>別途入会金5500円（教材費を含む）が必要です。</p>
+      <p>ご希望の時間帯に他受講生がいない場合、マンツーマンレッスンになります。</p>
+    </div>
+
+    <div class="freelesson_buttonWrapper">
+      <button class="freelesson_button" type="button" onclick="location.href='{% url 'hp:contact' %}'">
+        無料体験レッスンを申し込む
+      </button>
+    </div>
+
+    <div class="timetable">
+       <h1 class="headline">レッスン時間割</h1>
+       <div class="timetable_inner">
+         <table>
+           <thead>
+             <tr>
+               <th></th>
+               <th>小学生</th>
+               <th>中高生</th>
+               <th>大人</th>
+               <th>シニア</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td>10:30～11:20</td>
+               <td></td>
+               <td></td>
+               <td>〇</td>
+               <td>〇</td>
+             </tr>
+             <tr>
+               <td>13:00～13:50</td>
+               <td></td>
+               <td></td>
+               <td>〇</td>
+               <td>〇</td>
+             </tr>
+             <tr>
+               <td>14:30～15:20</td>
+               <td>スクール解放</td>
+               <td></td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr>
+               <td>15:20～16:10</td>
+               <td>〇</td>
+               <td></td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr>
+               <td>16:20～17:10</td>
+               <td>〇</td>
+               <td></td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr>
+               <td>17:20～18:10</td>
+               <td>〇</td>
+               <td>〇</td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr>
+               <td>18:20～19:10</td>
+               <td></td>
+               <td>〇</td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr>
+               <td>19:20～20:10</td>
+               <td></td>
+               <td>〇</td>
+               <td></td>
+               <td></td>
+             </tr>
+           </tbody>
+         </table>
+       </div>
+    </div>
+    <div class="timetable_annotion">
+      <p>スクール解放…学校から直接、当教室へお越しいただけるように解放しています。</p>
+      <p>ご希望の時間帯に該当のクラスがない場合、相談可〇</p>
+      <p>1レッスン50分</p>
+    </div>
+     <div class="calendar_buttonWrapper">
+       <button class="calendar_button" type="button" onclick="location.href='#'">年間レッスンカレンダー</button>
+     </div>
+</div>
+{% endblock %}
+
+{% block jquery %}
+<script>
+  ScrollReveal().reveal('.headline', {
+                         delay: 200,
+                         distance: '40px',
+                         origin: 'bottom',
+                         duration:2000,
+                         opacity:0,
+  });
+  ScrollReveal().reveal('.lesson', {
+                         delay: 200,
+                         distance: '40px',
+                         origin: 'bottom',
+                         duration:2000,
+                         opacity:0,
+  });
+  ScrollReveal().reveal('.fee_annotion', {
+                         delay: 200,
+                         distance: '40px',
+                         origin: 'bottom',
+                         duration:2000,
+                         opacity:0,
+  });
+  ScrollReveal().reveal('.freelesson_buttonWrapper', {
+                         delay: 200,
+                         distance: '40px',
+                         origin: 'bottom',
+                         duration:2000,
+                         opacity:0,
+  });
+  ScrollReveal().reveal('.timetable_inner', {
+                         delay: 200,
+                         distance: '40px',
+                         origin: 'bottom',
+                         duration:2000,
+                         opacity:0,
+  });
+  ScrollReveal().reveal('.timetable_annotion', {
+                         delay: 200,
+                         distance: '40px',
+                         origin: 'bottom',
+                         duration:2000,
+                         opacity:0,
+  });
+  ScrollReveal().reveal('.calendar_buttonWrapper', {
+                         delay: 200,
+                         distance: '40px',
+                         origin: 'bottom',
+                         duration:2000,
+                         opacity:0,
+  });
+</script>
+{% endblock %}
+
+{% block footer %}
+{% include 'hp/includes/footer.html '%}
+{% endblock %}

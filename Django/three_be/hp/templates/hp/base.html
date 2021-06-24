@@ -1,0 +1,97 @@
+{% load static %}
+{% load hp %}
+{% load app %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+    <title>{% block meta_title %}Three Be 英会話教室{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}実践的な英語力をつけたいあなたへ！一度無料体験レッスンへ！{% endblock %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    (function(d) {
+      var config = {
+        kitId: 'zuk6jte',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+     })(document);
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="{% static 'hp/css/style.css' %}">
+  </head>
+  <body>
+
+    <header class="ly_header">
+      <!-- <div class="ly_header_inner">
+      <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url('{% static 'hp/img/IMG_6185.JPG' %}')">
+        </div>
+        <div class="swiper-slide" style="background-image:url('{% static 'hp/img/スタジオセッション-043.JPG' %}')">
+        </div>
+        <div class="swiper-slide" style="background-image:url('{% static 'IMG_4493.JPG' %}')">
+        </div>
+      </div>
+      </div> -->
+      {% block header %}
+
+      {% endblock %}
+    </header>
+
+
+    <div>
+      <!-- <div class="jumbotrons" style="background-image:url('{% static 'hp/img/IMG_6185.JPG'%}')">
+        <div class="jumbotron_mask">
+        </div>
+        <!--jumbotron_mask-->
+      <!-- </div>  -->
+      <!--jumbotrons-->
+      {% block content %}{% endblock %}
+    </div>
+
+  {% block footer %}
+  {% endblock %}
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d0bd3d4034.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+
+    {% block jquery %}{% endblock %}
+    <script>
+      $(function () {
+        $('js-btn').on('click', function () {
+          $('.menu, .btn-line')toggleClass('open');
+        })
+      });
+
+  //     var swiper;
+  //     $(window).load(function() {
+  //     swiper = new Swiper('.swiper-container', {
+  //
+  //      loop: true,
+  //      speed: 600,
+  //      slidesPerView: 3,
+  //      spaceBetween: 10,
+  //      direction: 'horizontal'
+  //      effect: 'slide',
+  //
+  //      autoplay: {
+  //        delay: 3000,
+  //        stopOnLast: false,
+  //        disableOnInteraction: true
+  //      },
+  //
+  //     });
+  // });
+    </script>
+
+  </body>
+
+</html>

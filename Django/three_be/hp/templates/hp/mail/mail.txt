@@ -1,0 +1,36 @@
+{% if parent_name %}{{ parent_name }} 様 {% else %}{{ student_name }} 様 {% endif %}
+
+この度は、Three Be無料体験レッスンにお申込みいただきまして、誠にありがとうございます。
+
+お申込み内容は下記になります。
+
+
+【ご希望日（第一希望）】　　{{ first_date | date:'Y年n月j日' }}
+【ご希望時間帯（第一希望）】　　{{ first_time | date:'G時i分' }}
+{% if second_date %}【ご希望日（第二希望）】　　{{ second_date | date:'Y年n月j日' }}
+【ご希望時間帯（第二希望）】　　{{ second_time | date:'G時i分' }}{% endif %}
+{% if parent_name %}【保護者氏名】　　{{ parent_name }}{% endif %}
+【生徒名】　　{{ student_name }}
+【生年月日】　　{{ birthday | date:'Y年n月j日' }}
+【電話番号】　　{{ phone_number }}
+【メールアドレス】　　{{ email }}
+{% if text %}【ご要望・ご質問】　　{{ text }}{% endif %}
+
+
+体験レッスンの日程調整ができ次第、改めてご連絡いたします。
+予約状況により、ご希望に添えない場合があります。予めご了承ください。
+
+
+◇-◇-◇-◇-◇-◇-◇-◇-◇-◇-◇
+株式会社Yourbility Developers
+＜Ydeps＞ワイデップス
+呉本 心【Jin Kuremoto】
+Mobile: 080-4480-6767
+Email: jin.k@ydeps.co.jp
+Web: https://ydeps.co.jp
+〒616-8366
+京都市右京区嵯峨天龍寺今堀町16-5
+TEL: 075-873-3130（本社）
+TEL: 075-202-8434（事業統括本部）
+FAX: 075-873-3131
+◇-◇-◇-◇-◇-◇-◇-◇-◇-◇-◇
